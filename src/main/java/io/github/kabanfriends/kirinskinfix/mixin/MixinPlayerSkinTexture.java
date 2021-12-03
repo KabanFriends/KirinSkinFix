@@ -18,7 +18,7 @@ public class MixinPlayerSkinTexture {
         System.out.println("strip test");
         for(int i = x1; i < x2; ++i) {
             for(int j = y1; j < y2; ++j) {
-                image.setPixelColor(i, j, image.getPixelColor(i, j) | -16777216);
+                image.setColor(i, j, image.getColor(i, j) | -16777216);
             }
         }
     }
@@ -29,7 +29,7 @@ public class MixinPlayerSkinTexture {
         int m;
         for(l = x1; l < x2; ++l) {
             for(m = y1; m < y2; ++m) {
-                int k = image.getPixelColor(l, m);
+                int k = image.getColor(l, m);
                 if ((k >> 24 & 255) < 128) {
                     return;
                 }
@@ -38,7 +38,7 @@ public class MixinPlayerSkinTexture {
 
         for(l = x1; l < x2; ++l) {
             for(m = y1; m < y2; ++m) {
-                image.setPixelColor(l, m, image.getPixelColor(l, m) & 16777215);
+                image.setColor(l, m, image.getColor(l, m) & 16777215);
             }
         }
     }
